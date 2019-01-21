@@ -12,7 +12,8 @@ enum custom_keycodes {
   EPRM,
   VRSN,
   RGB_SLD,
-  WHPTXT
+  WHPTXT,
+  CMTTXT
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -95,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,  KC_TRNS,
        KC_TRNS, KC_TRNS, KC_LBRC,KC_RBRC, KC_LCBR, KC_RCBR, KC_TRNS,
                 KC_LEFT, KC_DOWN,KC_UP, KC_RIGHT, KC_TRNS, KC_TRNS,
-       KC_PIPE, KC_TRNS, KC_TRNS,KC_TRNS, KC_TRNS, KC_PGUP, KC_TRNS,
+       KC_PIPE, KC_TRNS, KC_TRNS,KC_TRNS, KC_TRNS, KC_PGUP, CMTTXT,
                          KC_TRNS,KC_TRNS, KC_HOME, KC_PGDN, KC_END,
        KC_TRNS,   KC_TRNS,
        KC_TRNS,
@@ -194,6 +195,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
            SEND_STRING(SS_LGUI("a")); 
 	   SEND_STRING("\b");
       }
+      return false;
+      break;
+      /*macro to make nerdcommenter more intellij like*/
+     case CMTTXT:
+      if(record->event.pressed) {
+           SEND_STRING("\\"); 
+           SEND_STRING("c"); 
+	   SEND_STRING(" ");
+      }
+      return false;
+      break;
 
   }
   return true;
