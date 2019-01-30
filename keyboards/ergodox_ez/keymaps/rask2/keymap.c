@@ -102,7 +102,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          KC_TRNS,KC_TRNS, KC_HOME, KC_PGDN, KC_END,
        KC_TRNS,   KC_TRNS,
        KC_TRNS,
-       KC_TRNS, KC_MPLY, KC_TRNS
+       KC_TRNS, KC_CIRCUMFLEX, KC_DOLLAR
+
 ),
 /* Keymap 2: Media and mouse keys
  *
