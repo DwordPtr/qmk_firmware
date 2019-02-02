@@ -18,7 +18,9 @@ enum custom_keycodes {
   RGB_SLD,
   WHPTXT,
   CMTTXT,
-  PAREN
+  PAREN,
+  VIM_DIFF_UP,
+  VIM_DIFF_DOWN
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -181,12 +183,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     KC_TRNS,
                                   KC_TRNS, KC_TRNS, KC_TRNS,
     // right hand
-       KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS,  KC_TRNS, VIM_DIFF_UP, VIM_DIFF_DOWN, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_TRNS,
                  KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_TRNS,
        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-       RESET,   KC_TRNS,
+       KC_TRNS,  KC_TRNS,
        KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS
 ),
@@ -256,6 +258,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
      case PAREN:
       if(record->event.pressed) {
            SEND_STRING("()"); 
+      }
+      return false;
+      break;
+     case VIM_DIFF_UP:
+      if(record->event.pressed) {
+           SEND_STRING("[c"); 
+      }
+      return false;
+      break;
+     case VIM_DIFF_DOWN:
+      if(record->event.pressed) {
+           SEND_STRING("]c"); 
       }
       return false;
       break;
