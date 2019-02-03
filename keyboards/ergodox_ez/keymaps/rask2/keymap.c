@@ -20,7 +20,9 @@ enum custom_keycodes {
   CMTTXT,
   PAREN,
   VIM_DIFF_UP,
-  VIM_DIFF_DOWN
+  VIM_DIFF_DOWN,
+  VIM_CLOSE_ALL,
+  VIM_SAVE_ALL,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -93,15 +95,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        // left hand
        KC_ESC, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,
        VRSN,   KC_TRNS,BWORD,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
-       KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
+       KC_TRNS,KC_TRNS,VIM_SAVE_ALL,KC_TRNS,KC_TRNS,KC_TRNS,
        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
           EPRM,KC_TRNS, KC_TRNS,KC_TRNS,KC_TRNS,
                                        KC_TRNS,KC_TRNS,
                                                KC_TRNS,
                                KC_TRNS,KC_TRNS,KC_TRNS,
        // right hand
-       KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,  KC_TRNS,
-       KC_TRNS, KC_TRNS, KC_TRNS,KC_TRNS, KC_LEFT_CURLY_BRACE, KC_RIGHT_CURLY_BRACE, KC_TRNS,
+       KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,  VIM_CLOSE_ALL,
+       KC_TRNS, KC_TRNS, VIM_DIFF_DOWN,VIM_DIFF_UP, KC_LEFT_CURLY_BRACE, KC_RIGHT_CURLY_BRACE, KC_TRNS,
                 KC_LEFT, KC_DOWN,KC_UP,   KC_RIGHT, KC_ESC, KC_TRNS,
        KC_PIPE, KC_TRNS, KC_TRNS,KC_TRNS, KC_TRNS, KC_PGUP, CMTTXT,
                          KC_TRNS,KC_TRNS, KC_HOME, KC_PGDN, KC_END,
@@ -270,6 +272,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
      case VIM_DIFF_DOWN:
       if(record->event.pressed) {
            SEND_STRING("]c"); 
+      }
+      return false;
+      break;
+     case VIM_CLOSE_ALL:
+      if(record->event.pressed) {
+           SEND_STRING(":qa!"); 
+      }
+      return false;
+      break;
+     case VIM_SAVE_ALL:
+      if(record->event.pressed) {
+           SEND_STRING(":xa!"); 
       }
       return false;
       break;
