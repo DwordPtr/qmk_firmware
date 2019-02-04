@@ -63,8 +63,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_DEL,
              KC_RBRC,KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_BSPC,
                      KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,
-             KC_RSFT,KC_N,   KC_M,   KC_COMM,KC_DOT, KC_BSLS,  KC_SLSH,
-                             KC_RALT,MO(FL2),KC_LEFT_PAREN,KC_DOWN,KC_RIGHT_PAREN,
+             KC_RSFT,KC_N,   KC_M,   KC_COMM,KC_DOT, KC_UP,  KC_SLSH,
+                             KC_RALT,MO(FL2),KC_LEFT,KC_DOWN,KC_RIGHT,
              KC_RCTL,        KC_ESC,
              KC_PGUP,
              KC_PGDN,KC_ENT, KC_SPC
@@ -142,7 +142,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        EPRM,    KC_APP,  KC_TRNS, KC_BTN1, KC_BTN2,
                                            KC_TRNS, KC_TRNS,
                                                     KC_TRNS,
-                                  KC_TRNS, KC_TRNS, KC_TRNS,
+                                  KC_LEFT_PAREN, KC_RIGHT_PAREN, KC_TRNS,
     // right hand
        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS,  KC_TRNS, KC_MPRV, KC_MPLY, KC_MNXT, KC_TRNS, KC_TRNS,
@@ -185,14 +185,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     KC_TRNS,
                                   KC_TRNS, KC_TRNS, KC_TRNS,
     // right hand
-       KC_TRNS,  KC_TRNS, VIM_DIFF_UP, VIM_DIFF_DOWN, KC_TRNS, KC_TRNS, KC_TRNS,
-       KC_TRNS,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_TRNS,
+       RGB_M_T,  RGB_M_B, VIM_DIFF_UP, VIM_DIFF_DOWN, KC_TRNS, KC_TRNS, KC_TRNS,
+       RGB_TOG,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_TRNS,
                  KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_TRNS,
        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-       KC_TRNS,  KC_TRNS,
-       KC_TRNS,
-       KC_TRNS, KC_TRNS, KC_TRNS
+       RGB_SAI,  RGB_SAD,
+       RGB_HUI,
+       RGB_HUD, RGB_MOD, RGB_RMOD
 ),
 };
 
