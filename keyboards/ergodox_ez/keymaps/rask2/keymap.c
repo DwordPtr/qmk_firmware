@@ -277,13 +277,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
      case VIM_CLOSE_ALL:
       if(record->event.pressed) {
-           SEND_STRING(":qa!"); 
+           SEND_STRING(":qa!" SS_TAP(X_ENTER)); 
       }
       return false;
       break;
      case VIM_SAVE_ALL:
       if(record->event.pressed) {
-           SEND_STRING(":xa!"); 
+           SEND_STRING(":xa!" SS_TAP(X_ENTER)); 
       }
       return false;
       break;
