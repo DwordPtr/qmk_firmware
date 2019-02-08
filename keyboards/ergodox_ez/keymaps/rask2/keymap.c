@@ -23,6 +23,13 @@ enum custom_keycodes {
   VIM_DIFF_DOWN,
   VIM_CLOSE_ALL,
   VIM_SAVE_ALL,
+  TMUX_1,
+  TMUX_2,
+  TMUX_3,
+  TMUX_4,
+  TMUX_5,
+  TMUX_CREAT,
+  TMUX_DEST
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -96,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_ESC, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,
        VRSN,   KC_TRNS,BWORD,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
        KC_TRNS,KC_TRNS,VIM_SAVE_ALL,KC_TRNS,KC_TRNS,KC_TRNS,
-       KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
+       KC_TRNS,KC_TRNS,KC_TRNS,TMUX_CREAT,KC_TRNS,KC_TRNS,KC_TRNS,
           EPRM,KC_TRNS, KC_TRNS,KC_TRNS,KC_TRNS,
                                        KC_TRNS,KC_TRNS,
                                                KC_TRNS,
@@ -136,9 +143,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // MEDIA AND MOUSE
 [FL2] = LAYOUT_ergodox(
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-       KC_TRNS, KC_TRNS, KC_TRNS, KC_MS_U, KC_BTN1, KC_BTN2, KC_TRNS,
-       KC_CAPS, WHPTXT, KC_MS_L, KC_MS_D, KC_MS_R, KC_TRNS,
-       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, T_PRE, KC_TRNS,
+       KC_TRNS, TMUX_1, TMUX_2, TMUX_3, TMUX_4, TMUX_5, KC_TRNS,
+       KC_CAPS, WHPTXT, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
+       KC_TRNS, KC_TRNS, TMUX_DEST, KC_TRNS, KC_TRNS, T_PRE, KC_TRNS,
        EPRM,    KC_APP,  KC_TRNS, KC_BTN1, KC_BTN2,
                                            KC_TRNS, KC_TRNS,
                                                     KC_TRNS,
@@ -284,6 +291,56 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
      case VIM_SAVE_ALL:
       if(record->event.pressed) {
            SEND_STRING(":xa!" SS_TAP(X_ENTER)); 
+      }
+      return false;
+      break;
+
+     case TMUX_1:
+      if(record->event.pressed) {
+           SEND_STRING(SS_LCTRL("b") "1"); 
+      }
+      return false;
+      break;
+
+     case TMUX_2:
+      if(record->event.pressed) {
+           SEND_STRING(SS_LCTRL("b") "2"); 
+      }
+      return false;
+      break;
+
+     case TMUX_3:
+      if(record->event.pressed) {
+           SEND_STRING(SS_LCTRL("b") "3"); 
+      }
+      return false;
+      break;
+
+     case TMUX_4:
+      if(record->event.pressed) {
+           SEND_STRING(SS_LCTRL("b") "4"); 
+      }
+      return false;
+      break;
+
+     case TMUX_5:
+      if(record->event.pressed) {
+           SEND_STRING(SS_LCTRL("b") "5"); 
+      }
+      return false;
+      break;
+
+     case TMUX_CREAT:
+      if(record->event.pressed) {
+           SEND_STRING(SS_LCTRL("b") "c"); 
+      }
+      return false;
+      break;
+
+     case TMUX_DEST:
+      if(record->event.pressed) {
+           SEND_STRING(SS_LCTRL("b") "x"); 
+	   SEND_STRING("y");
       }
       return false;
       break;
