@@ -10,6 +10,8 @@
 
 #define BWORD LALT(KC_BSPC) 
 #define T_PRE LCTL(KC_B)
+#define KC_SEARCH LCTL(KC_R)
+#define KC_CLOSE LCTL(KC_C)
 
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
@@ -65,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCTL,MO(FL3),KC_LGUI,KC_END,KC_LALT,
                                         KC_INS, KC_PSCR,
                                                         KC_DEL,
-                                        KC_SPC, KC_BSPC,KC_TAB,
+                                        KC_SPC, KC_BSPC, KC_TAB,
         // right hand
              KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_DEL,
              KC_RBRC,KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_BSPC,
