@@ -19,6 +19,7 @@
 #define KC_CTRLU LCTL(KC_U)
 #define KC_CTRLP LCTL(KC_P)
 
+
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
   EPRM,
@@ -203,7 +204,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                   KC_TRNS, KC_TRNS, KC_TRNS,
     // right hand
        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-       KC_TRNS,  KC_COPY,    KC_CTRLU,    KC_ESC,    KC_TRNS,    KC_PASTE,    KC_TRNS,
+       KC_TRNS,  KC_COPY,    KC_CTRLU,    KC_ESC,    KC_TAB,    KC_PASTE,    KC_TRNS,
        
                  KC_TRNS,    KC_SEARCH,    KC_CLOSE,    KC_CLEAR,    VIM_SAVE, KC_TRNS,
        KC_TRNS,  KC_CTRLP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
