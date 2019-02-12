@@ -7,11 +7,16 @@
 #define FL1 1 // symbols
 #define FL2 2 // media keys
 #define FL3 3 // numbers
+#define FL4 4 // misc
 
 #define BWORD LALT(KC_BSPC) 
 #define T_PRE LCTL(KC_B)
 #define KC_SEARCH LCTL(KC_R)
 #define KC_CLOSE LCTL(KC_C)
+#define KC_CLEAR LCTL(KC_L)
+#define KC_COPY LGUI(KC_C)
+#define KC_PASTE LGUI(KC_V)
+#define KC_CTRLU LCTL(KC_U)
 
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
@@ -61,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [BASE] = LAYOUT_ergodox(  // layer 0 : default
         // left hand
         KC_GRV, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,
-        KC_TAB ,KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_LBRC,
+        MO(FL4) ,KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_LBRC,
         MO(FL1),KC_A,   KC_S,   KC_D,   KC_F,   KC_G,
         KC_LSFT,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_BSLS,
         KC_LCTL,MO(FL3),KC_LGUI,KC_END,KC_LALT,
@@ -105,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_ESC, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,
        VRSN,   KC_TRNS,BWORD,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
        KC_TRNS,KC_TRNS,VIM_SAVE_ALL,KC_TRNS,KC_TRNS,KC_TRNS,
-       KC_TRNS,KC_TRNS,KC_TRNS,TMUX_CREAT,KC_TRNS,KC_TRNS,KC_TRNS,
+       KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
           EPRM,KC_TRNS, KC_TRNS,KC_TRNS,KC_TRNS,
                                        KC_TRNS,KC_TRNS,
                                                KC_TRNS,
@@ -113,7 +118,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        // right hand
        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,  VIM_CLOSE_ALL,
        KC_TRNS, KC_TRNS, VIM_DIFF_DOWN,VIM_DIFF_UP, KC_LEFT_CURLY_BRACE, KC_RIGHT_CURLY_BRACE, KC_TRNS,
-                KC_LEFT, KC_DOWN,KC_UP,   KC_RIGHT, KC_ESC, KC_TRNS,
+                KC_LEFT, KC_DOWN,KC_UP,   KC_RIGHT, KC_ESC, KC_BSLS,
        KC_PIPE, KC_TRNS, KC_TRNS,KC_TRNS, KC_TRNS, KC_PGUP, CMTTXT,
                          KC_TRNS,KC_TRNS, KC_HOME, KC_PGDN, KC_END,
        KC_TRNS,   KC_TRNS,
@@ -147,7 +152,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS, TMUX_1, TMUX_2, TMUX_3, TMUX_4, TMUX_5, KC_TRNS,
        KC_CAPS, WHPTXT, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
-       KC_TRNS, KC_TRNS, TMUX_DEST, KC_TRNS, KC_TRNS, T_PRE, KC_TRNS,
+       KC_TRNS, KC_TRNS, TMUX_DEST, TMUX_CREAT, KC_TRNS, KC_TRNS, KC_TRNS,
        EPRM,    KC_APP,  KC_TRNS, KC_BTN1, KC_BTN2,
                                            KC_TRNS, KC_TRNS,
                                                     KC_TRNS,
@@ -162,27 +167,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS
 ),
-/* Keymap 3: Random numbers and garbage 
- *
- * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
- * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |        |      |      | MsUp |      |      |      |           |      |      | Prev | Play | Next |      |        |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * | CapsLk |      |MsLeft|MsDown|MsRght|      |------|           |------|      | VolD | Mute | VolU |      |        |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |      |      |      |      |      |      |           |      |      |      | Stop |      |      |        |
- * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |EEPROM| Menu |      | Lclk | Rclk |                                       |      |      |      |      |      |
- *   `----------------------------------'                                       `----------------------------------'
- *                                        ,-------------.       ,-------------.
- *                                        |      |      |       | Reset|      |
- *                                 ,------|------|------|       |------+------+------.
- *                                 |      |      |      |       |      |      |      |
- *                                 |      |      |------|       |------|      |      |
- *                                 |      |      |      |       |      |      |      |
- *                                 `--------------------'       `--------------------'
- */
+
 // MEDIA AND MOUSE
 [FL3] = LAYOUT_ergodox(
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -202,6 +187,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        RGB_SAI,  RGB_SAD,
        RGB_HUI,
        RGB_HUD, RGB_MOD, RGB_RMOD
+),
+// MISC 
+[FL4] = LAYOUT_ergodox(
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                                           KC_TRNS, KC_TRNS,
+                                                    KC_TRNS,
+                                  KC_TRNS, KC_TRNS, KC_TRNS,
+    // right hand
+       KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS,  KC_COPY,    KC_CTRLU,    KC_TRNS,    KC_TRNS,    KC_PASTE,    KC_TRNS,
+                 KC_TRNS,    KC_SEARCH,    KC_CLOSE,    KC_CLEAR,    KC_TRNS, KC_TRNS,
+       KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS,  KC_TRNS,
+       KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS
 ),
 };
 
@@ -375,6 +380,10 @@ void matrix_scan_user(void) {
             break;
 	case 3:
 	    ergodox_right_led_3_on();
+	    break;
+	case 4:
+            ergodox_right_led_1_on();
+            ergodox_right_led_2_on();
 	    break;
         default:
             // none
