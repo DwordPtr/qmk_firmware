@@ -31,6 +31,8 @@ enum custom_keycodes {
   VIM_DIFF_DOWN,
   VIM_CLOSE_ALL,
   VIM_SAVE_ALL,
+  VIM_SAVE,
+  TMUX_SEARCH,
   TMUX_1,
   TMUX_2,
   TMUX_3,
@@ -151,7 +153,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // MEDIA AND MOUSE
 [FL2] = LAYOUT_ergodox(
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-       KC_TRNS, TMUX_1, TMUX_2, TMUX_3, TMUX_4, TMUX_5, KC_TRNS,
+       TMUX_SEARCH, TMUX_1, TMUX_2, TMUX_3, TMUX_4, TMUX_5, KC_TRNS,
        KC_CAPS, WHPTXT, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
        KC_TRNS, KC_TRNS, TMUX_DEST, TMUX_CREAT, KC_TRNS, KC_TRNS, KC_TRNS,
        EPRM,    KC_APP,  KC_TRNS, KC_BTN1, KC_BTN2,
@@ -203,7 +205,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS,  KC_COPY,    KC_CTRLU,    KC_ESC,    KC_TRNS,    KC_PASTE,    KC_TRNS,
        
-                 KC_TRNS,    KC_SEARCH,    KC_CLOSE,    KC_CLEAR,    KC_TRNS, KC_TRNS,
+                 KC_TRNS,    KC_SEARCH,    KC_CLOSE,    KC_CLEAR,    VIM_SAVE, KC_TRNS,
        KC_TRNS,  KC_CTRLP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS,  KC_TRNS,
@@ -300,6 +302,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
      case VIM_SAVE_ALL:
       if(record->event.pressed) {
            SEND_STRING(":xa!" SS_TAP(X_ENTER)); 
+      }
+      return false;
+      break;
+     case VIM_SAVE:
+      if(record->event.pressed) {
+           SEND_STRING(":w" SS_TAP(X_ENTER)); 
+      }
+      return false;
+      break;
+
+     case TMUX_SEARCH:
+      if(record->event.pressed) {
+           SEND_STRING(SS_LCTRL("b") SS_TAP(X_ENTER)); 
       }
       return false;
       break;
