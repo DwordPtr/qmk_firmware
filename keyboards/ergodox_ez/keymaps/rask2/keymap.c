@@ -17,6 +17,7 @@
 #define KC_COPY LGUI(KC_C)
 #define KC_PASTE LGUI(KC_V)
 #define KC_CTRLU LCTL(KC_U)
+#define KC_CTRLP LCTL(KC_P)
 
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
@@ -200,9 +201,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                   KC_TRNS, KC_TRNS, KC_TRNS,
     // right hand
        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-       KC_TRNS,  KC_COPY,    KC_CTRLU,    KC_TRNS,    KC_TRNS,    KC_PASTE,    KC_TRNS,
+       KC_TRNS,  KC_COPY,    KC_CTRLU,    KC_ESC,    KC_TRNS,    KC_PASTE,    KC_TRNS,
+       
                  KC_TRNS,    KC_SEARCH,    KC_CLOSE,    KC_CLEAR,    KC_TRNS, KC_TRNS,
-       KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS,  KC_CTRLP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS,  KC_TRNS,
        KC_TRNS,
