@@ -183,7 +183,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     KC_TRNS,
                                   KC_TRNS, KC_TRNS, KC_TRNS,
     // right hand
-       RGB_M_T,  RGB_M_B, VIM_DIFF_UP, VIM_DIFF_DOWN, KC_TRNS, KC_TRNS, KC_TRNS,
+       RGB_M_T,  RGB_M_B, VIM_DIFF_UP, VIM_DIFF_DOWN, KC_BRMD, KC_BRMU, KC_TRNS,
        RGB_TOG,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_TRNS,
                  KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_TRNS,
        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -204,11 +204,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                   KC_TRNS, KC_TRNS, KC_TRNS,
     // right hand
        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-       KC_TRNS,  KC_COPY,    KC_CTRLU,    KC_ESC,    KC_TAB,    KC_PASTE,    KC_TRNS,
+       KC_TRNS,  KC_COPY,    KC_CTRLU,    KC_ESC,    KC_TAB,    KC_PASTE,    KC_TAB,
        
                  KC_TRNS,    KC_SEARCH,    KC_CLOSE,    KC_CLEAR,    VIM_SAVE, KC_TRNS,
        KC_TRNS,  KC_CTRLP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-                          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                          KC_LGUI, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS,  KC_TRNS,
        KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS
