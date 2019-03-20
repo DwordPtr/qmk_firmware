@@ -206,7 +206,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS,  KC_COPY,    KC_CTRLU,    KC_ESC,    KC_TAB,    KC_PASTE,    KC_TAB,
        
-                 KC_TRNS,    KC_SEARCH,    KC_CLOSE,    KC_CLEAR,    VIM_SAVE, KC_TRNS,
+                 KC_TRNS,    KC_PGDN,    KC_PGUP,    KC_CLEAR,    VIM_SAVE, KC_TRNS,
        KC_TRNS,  KC_CTRLP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                           KC_LGUI, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS,  KC_TRNS,
