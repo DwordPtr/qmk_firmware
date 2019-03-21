@@ -18,6 +18,8 @@
 #define KC_PASTE LGUI(KC_V)
 #define KC_CTRLU LCTL(KC_U)
 #define KC_CTRLP LCTL(KC_P)
+#define KC_MAC_L LCTL(KC_LEFT)
+#define KC_MAC_R LCTL(KC_RIGHT)
 
 
 enum custom_keycodes {
@@ -82,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              KC_RBRC,KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_BSPC,
                      KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,
              KC_RSFT,KC_N,   KC_M,   KC_COMM,KC_DOT, KC_UP,  KC_SLSH,
-                             KC_RALT,MO(FL2),KC_LEFT,KC_DOWN,KC_RCTL,
+                             KC_RALT,MO(FL2),KC_LEFT,KC_DOWN,MT(MOD_RCTL,KC_RIGHT),
              KC_RCTL,        KC_ESC,
              KC_PGUP,
              KC_ESC,KC_ENT, KC_SPC
@@ -206,7 +208,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS,  KC_COPY,    KC_CTRLU,    KC_ESC,    KC_TAB,    KC_PASTE,    KC_TAB,
        
-                 KC_TRNS,    KC_PGDN,    KC_PGUP,    KC_CLEAR,    VIM_SAVE, KC_TRNS,
+                 KC_MAC_L,    KC_PGDN,    KC_PGUP,    KC_MAC_R,    VIM_SAVE, KC_TRNS,
        KC_TRNS,  KC_CTRLP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                           KC_LGUI, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS,  KC_TRNS,
