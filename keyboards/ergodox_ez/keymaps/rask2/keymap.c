@@ -73,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left hand
         KC_GRV, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,
         LT(FL4,KC_TAB) ,KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_LBRC,
-        LT(FL1,KC_ESC),KC_A,   KC_S,   KC_D,   KC_F,   KC_G,
+        MO(FL1),KC_A,   KC_S,   KC_D,   KC_F,   KC_G,
         KC_LSFT,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_BSLS,
         KC_LCTL,TG(FL3),KC_LGUI,KC_COMM,KC_LALT,
                                         KC_INS, KC_PSCR,
@@ -125,7 +125,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,  VIM_CLOSE_ALL,
        KC_TRNS, KC_TRNS, VIM_DIFF_DOWN,VIM_DIFF_UP, KC_LEFT_CURLY_BRACE, KC_RIGHT_CURLY_BRACE, KC_TRNS,
                 KC_LEFT, KC_DOWN,KC_UP,   KC_RIGHT, KC_ESC, KC_BSLS,
-       KC_PIPE, KC_TRNS, KC_TRNS,KC_TRNS, KC_TRNS, KC_PGUP, CMTTXT,
+       KC_PIPE, KC_CIRCUMFLEX, KC_DOLLAR,KC_TRNS, KC_TRNS, KC_PGUP, CMTTXT,
                          KC_TRNS,KC_TRNS, KC_HOME, KC_PGDN, KC_END,
        KC_TRNS,   KC_TRNS,
        KC_TRNS,
