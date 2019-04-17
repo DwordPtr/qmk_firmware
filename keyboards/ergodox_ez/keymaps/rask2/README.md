@@ -11,7 +11,7 @@ Based on [rask](https://github.com/qmk/qmk_firmware/blob/ee700b2e831067bdb758442
 - assumes `\` is vim leader and that you use NERDCommenter
 - that `<C-b>` is your tmux prefix
 - that you share opinions of the author
-
+- abstraction level in the code is lower than I'd like
 
 ## Building and flashing
 
