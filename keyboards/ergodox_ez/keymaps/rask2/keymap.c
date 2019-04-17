@@ -42,7 +42,8 @@ enum custom_keycodes {
   TMUX_4,
   TMUX_5,
   TMUX_CREAT,
-  TMUX_DEST
+  TMUX_DEST,
+  TMUX_VERT_SPLIT
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -93,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // MEDIA, MOUSE, and TMUX layer
 [FL2] = LAYOUT_ergodox(
-       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, TMUX_VERT_SPLIT, KC_TRNS,
        TMUX_SEARCH, TMUX_1, TMUX_2, TMUX_3, TMUX_4, TMUX_5, KC_TRNS,
        KC_CAPS, WHPTXT, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
        KC_TRNS, KC_TRNS, TMUX_DEST, TMUX_CREAT, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -306,6 +307,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if(record->event.pressed) {
            SEND_STRING(SS_LCTRL("b") "x"); 
 	   SEND_STRING("y");
+      }
+      return false;
+      break;
+     case TMUX_VERT_SPLIT:
+      if(record->event.pressed) {
+           SEND_STRING(SS_LCTRL("b") "%"); 
       }
       return false;
       break;
