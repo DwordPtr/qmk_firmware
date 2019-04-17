@@ -28,7 +28,7 @@ enum custom_keycodes {
   VRSN,
   RGB_SLD,
   WHPTXT,
-  CMTTXT,
+  VIM_NERDCOMMENTER,
   PAREN,
   VIM_DIFF_UP,
   VIM_DIFF_DOWN,
@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,  VIM_CLOSE_ALL,
        KC_TRNS, KC_TRNS, VIM_DIFF_DOWN,VIM_DIFF_UP, KC_LEFT_CURLY_BRACE, KC_RIGHT_CURLY_BRACE, KC_TRNS,
                 KC_LEFT, KC_DOWN,KC_UP,   KC_RIGHT, KC_SLASH, KC_BSLASH,
-       KC_PIPE, KC_CIRCUMFLEX, KC_DOLLAR,KC_TRNS, KC_TRNS, KC_PGUP, CMTTXT,
+       KC_PIPE, KC_CIRCUMFLEX, KC_DOLLAR,KC_TRNS, KC_TRNS, KC_PGUP, VIM_NERDCOMMENTER,
                          KC_TRNS,KC_TRNS, KC_HOME, KC_PGDN, KC_END,
        KC_TRNS,   KC_TRNS,
        KC_TRNS,
@@ -208,7 +208,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
       break;
       /*macro to make nerdcommenter more intellij like*/
-     case CMTTXT:
+     case VIM_NERDCOMMENTER:
       if(record->event.pressed) {
            SEND_STRING("\\"); 
            SEND_STRING("c"); 
