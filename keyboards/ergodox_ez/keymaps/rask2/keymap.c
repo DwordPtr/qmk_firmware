@@ -8,6 +8,7 @@
 #define FL2 2 // media keys
 #define FL3 3 // numbers
 #define FL4 4 // misc
+#define FL5 5 //numpad
 
 #define BWORD LALT(KC_BSPC) 
 #define T_PRE LCTL(KC_B)
@@ -57,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         LT(FL4,KC_TAB) ,KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_LBRC,
         MO(FL1),KC_A,   KC_S,   KC_D,   KC_F,   KC_G,
         KC_LSFT,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_BSLS,
-        KC_LCTL,TG(FL3),KC_LGUI,KC_COMM,KC_LALT,
+        KC_LCTL,TG(FL3),KC_LGUI,MO(FL5),KC_LALT,
                                         KC_INS, KC_PSCR,
                                                         KC_DEL,
                                         KC_SPC, KC_BSPC, KC_TAB,
@@ -149,13 +150,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // right hand
        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS,  KC_COPY,    KC_CTRLU,    KC_ESC,    KC_TAB,    KC_PASTE,    KC_TAB,
-       
                  KC_MAC_L,    KC_PGDN,    KC_PGUP,    KC_MAC_R,    VIM_SAVE, KC_TRNS,
        KC_TRNS,  KC_CTRLP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                           KC_LGUI, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS,  KC_TRNS,
        KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS
+),
+// NUMPAD
+[FL5] = LAYOUT_ergodox(
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                                           KC_TRNS, KC_TRNS,
+                                                    KC_TRNS,
+                                  KC_TRNS, KC_TRNS, KC_TRNS,
+    // right hand
+       KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS,  KC_TRNS,    KC_7,       KC_8,    KC_9,    KC_TRNS,    KC_TRNS,
+                 KC_TRNS,    KC_4,       KC_5,    KC_6, KC_TRNS, KC_TRNS,
+       KC_TRNS,  KC_TRNS, KC_1, KC_2, KC_3, KC_TRNS, KC_TRNS,
+                          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS,  KC_TRNS,
+       KC_TRNS,
+       KC_TRNS, KC_ENT, KC_0
 ),
 };
 
