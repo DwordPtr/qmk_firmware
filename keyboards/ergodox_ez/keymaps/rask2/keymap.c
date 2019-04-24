@@ -2,6 +2,7 @@
 #include "debug.h"
 #include "action_layer.h"
 #include "version.h"
+#include "rgblight.h"
 
 #define BASE 0 // default layer
 #define FL1 1 // symbols
@@ -172,7 +173,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS,  KC_TRNS,    KC_7,       KC_8,    KC_9,    KC_TRNS,    KC_TRNS,
                  KC_TRNS,    KC_4,       KC_5,    KC_6, KC_TRNS, KC_TRNS,
        KC_TRNS,  KC_TRNS, KC_1, KC_2, KC_3, KC_TRNS, KC_TRNS,
-                          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                          KC_DOT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS,  KC_TRNS,
        KC_TRNS,
        KC_TRNS, KC_ENT, KC_0
@@ -378,19 +379,33 @@ void matrix_scan_user(void) {
     ergodox_right_led_3_off();
     switch (layer) {
       // TODO: Make this relevant to the ErgoDox EZ.
+        case 0:
+	    rgblight_effect_snake(1);
+            break;
         case 1:
             ergodox_right_led_1_on();
+	    rgblight_setrgb(0xFF, 0x00,0x00);
             break;
         case 2:
             ergodox_right_led_2_on();
+	    rgblight_setrgb(0x00, 0xFF,0x00);
             break;
 	case 3:
 	    ergodox_right_led_3_on();
+	    rgblight_setrgb(0x00, 0x00,0xFF);
 	    break;
 	case 4:
             ergodox_right_led_1_on();
             ergodox_right_led_2_on();
+	    rgblight_setrgb(0xFF, 0xFF,0x00);
 	    break;
+	case 5:
+            ergodox_right_led_1_on();
+            ergodox_right_led_2_on();
+	    ergodox_right_led_3_on();
+	    rgblight_setrgb(0xFF, 0xFF,0xFF);
+	    break;
+	    
         default:
             // none
             break;
