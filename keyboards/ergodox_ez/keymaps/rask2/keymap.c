@@ -23,6 +23,8 @@
 #define KC_MAC_L LCTL(KC_LEFT)
 #define KC_MAC_R LCTL(KC_RIGHT)
 
+//define your vim leader (escaping included) here
+#define VIM_LEADER "\\"
 
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
@@ -235,7 +237,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       /*macro to make nerdcommenter more intellij like*/
      case VIM_NERDCOMMENTER:
       if(record->event.pressed) {
-           SEND_STRING("\\"); 
+           SEND_STRING(VIM_LEADER); 
            SEND_STRING("c"); 
 	   SEND_STRING(" ");
       }
