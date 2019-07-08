@@ -16,6 +16,7 @@
 
 #include QMK_KEYBOARD_H
 #include "muse.h"
+#include "rgblight.h"
  
 extern keymap_config_t keymap_config;
 
@@ -188,8 +189,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
  
 [FL1] = LAYOUT_planck_grid(
-    KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    VIM_DIFF_DOWN,VIM_DIFF_UP,    KC_LEFT_CURLY_BRACE, KC_RIGHT_CURLY_BRACE,   VIM_SAVE_ALL,
-    KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,KC_SLSH, KC_QUOT,
+    KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_PGDN,    KC_PGUP,    VIM_DIFF_DOWN,VIM_DIFF_UP,    KC_LEFT_CURLY_BRACE, KC_RIGHT_CURLY_BRACE,   VIM_SAVE_ALL,
+    KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,KC_SLSH, KC_BSLASH,
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_CIRCUMFLEX, KC_DOLLAR,    KC_COMM, KC_DOT,  KC_SLSH, VIM_NERDCOMMENTER,
     KC_LCTL, KC_LALT, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_LEFT, KC_RALT, KC_UP,   KC_RCTL
 ),
