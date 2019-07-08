@@ -81,7 +81,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        // left hand
        KC_ESC, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,
        VRSN,   KC_TRNS,BWORD,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
-       KC_TRNS,KC_TRNS,VIM_SAVE_ALL,KC_TRNS,KC_TRNS,KC_TRNS,
+       KC_TRNS,KC_TRNS,
+       VIM_SAVE_ALL,KC_TRNS,KC_TRNS,KC_TRNS,
        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
           EPRM,KC_TRNS, KC_TRNS,KC_TRNS,KC_TRNS,
                                        KC_TRNS,KC_TRNS,
@@ -95,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          KC_TRNS,KC_TRNS, KC_HOME, KC_PGDN, KC_END,
        KC_TRNS,   KC_TRNS,
        KC_TRNS,
-       KC_TRNS, KC_CIRCUMFLEX, KC_DOLLAR
+       KC_TRNS, KC_ENT, KC_TRNS
 
 ),
 
@@ -382,7 +383,7 @@ void matrix_scan_user(void) {
     switch (layer) {
       // TODO: Make this relevant to the ErgoDox EZ.
         case 0:
-	    rgblight_effect_snake(1);
+	    rgblight_setrgb(0xFF, 0x00,0xFF);
             break;
         case 1:
             ergodox_right_led_1_on();
