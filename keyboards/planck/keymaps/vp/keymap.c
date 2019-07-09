@@ -202,10 +202,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [FL3] = LAYOUT_planck_grid(
-    KC_ESC,  TMUX_1,    TMUX_2,    TMUX_3,    TMUX_4,    KC_T,    KC_Y,    KC_7,   KC_8,  KC_9, KC_TRNS,    KC_BSPC,
+    KC_ESC,  KC_TRNS,   KC_TRNS,   KC_TRNS,    KC_TRNS,    KC_T,    KC_Y,    KC_7,   KC_8,  KC_9, KC_TRNS,    KC_BSPC,
     KC_TAB,  KC_A,    KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,    KC_H,    KC_4,       KC_5,    KC_6,    KC_SCLN, KC_QUOT,
-    KC_LSFT, KC_Z,    TMUX_DEST,    TMUX_CREAT,    KC_V,    KC_B,    KC_N,    KC_1, KC_2, KC_3,  KC_SLSH, MT(MOD_RSFT,KC_ENT),
-    KC_LCTL, KC_LALT, KC_LALT, KC_BTN1, KC_BTN2,   KC_0,  KC_SPC,  RAISE,   KC_RALT, KC_DOWN, KC_UP,   KC_RCTL
+    KC_LSFT, KC_Z,    KC_TRNS,    KC_TRNS,    KC_V,    KC_B,    KC_N,    KC_1, KC_2, KC_3,  KC_SLSH, MT(MOD_RSFT,KC_ENT),
+    KC_LCTL, KC_LALT, KC_TRNS, KC_TRNS, KC_BTN2,   KC_SPC,  KC_SPC,  RAISE,   KC_RALT, KC_DOWN, KC_UP,   KC_RCTL
 ),
 
 };
